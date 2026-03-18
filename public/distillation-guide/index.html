@@ -23,7 +23,7 @@
 </head>
 <body>
 
-<!-- Theme Sync with Next.js Parent -->
+<!-- Theme Sync & Height Resize with Next.js Parent -->
 <script>
   function syncTheme() {
     try {
@@ -39,12 +39,37 @@
   }
   syncTheme();
   
+  function sendHeight() {
+    try {
+      const height = document.documentElement.scrollHeight;
+      if (window.parent) {
+        window.parent.postMessage({ type: 'resize', height: height }, '*');
+      }
+    } catch(e) {}
+  }
+
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  // Re-calculate after math and interactive elements load
+  setTimeout(sendHeight, 500);
+  setTimeout(sendHeight, 1500);
+  setTimeout(sendHeight, 3000);
+  
   try {
     if (window.parent && window.parent.document) {
-      const observer = new MutationObserver(syncTheme);
+      const observer = new MutationObserver(() => {
+        syncTheme();
+        sendHeight();
+      });
       observer.observe(window.parent.document.documentElement, { attributes: true, attributeFilter: ['class'] });
     }
   } catch (e) {}
+  
+  // Observe body changes for dynamic expansions
+  const bodyObserver = new MutationObserver(sendHeight);
+  window.addEventListener('DOMContentLoaded', () => {
+    bodyObserver.observe(document.body, { childList: true, subtree: true, attributes: true });
+  });
 </script>
 
 <header>
