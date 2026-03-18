@@ -49,7 +49,7 @@ export default function Home() {
             
             <div className="relative z-10">
               <div className="inline-flex items-center px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-mono font-bold mb-4 border border-slate-200 dark:border-slate-700">
-                Interactive Essay
+                Interactive Guide
               </div>
               <h3 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                 <a href="/my-portfolio-blog/blog/model-distillation/index.html" className="focus:outline-none">
