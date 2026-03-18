@@ -8,11 +8,16 @@ export default function Resume() {
     <div className="max-w-3xl mx-auto space-y-16">
       <header className="border-b border-slate-200 dark:border-slate-800 pb-8">
         <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Divyam Arora</h1>
-        <p className="text-xl text-slate-600 dark:text-slate-400 mb-6 font-serif italic">Data Scientist</p>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
-          Gurugram, India • divyamkotaarora2@gmail.com
-        </p>
-        <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 mb-6">
+          <p className="text-xl text-slate-600 dark:text-slate-400 font-serif italic">Data Scientist</p>
+          <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
+          <div className="flex flex-wrap items-center gap-4 text-sm font-medium">
+            <a href="mailto:divyamkotaarora2@gmail.com" className="text-slate-500 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors">Email</a>
+            <a href="https://github.com/diveyum" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/divyama" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors">LinkedIn</a>
+          </div>
+        </div>
+        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
           Data Scientist with 2.5+ years experience in shipping GenAI and ML systems across financial services and consulting. Built computer vision systems, document intelligence pipelines, and predictive models from development through deployment.
         </p>
       </header>
