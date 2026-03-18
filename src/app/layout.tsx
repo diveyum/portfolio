@@ -25,7 +25,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${lora.variable} ${mono.variable} font-sans antialiased bg-[#fafafa] dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col selection:bg-cyan-200 selection:text-cyan-900 dark:selection:bg-cyan-900 dark:selection:text-cyan-100`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {/* Subtle dot matrix background that adapts to dark mode */}
           <div className="fixed inset-0 z-[-1] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-50 dark:opacity-20"></div>
           
@@ -33,10 +33,10 @@ export default function RootLayout({
             <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
               <Link href="/" className="group flex items-center gap-2">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 dark:from-cyan-500 dark:to-cyan-700 text-white flex items-center justify-center font-bold font-mono group-hover:rotate-12 transition-transform shadow-sm">
-                  D
+                  DA
                 </div>
                 <span className="text-lg font-bold text-slate-800 dark:text-slate-100 tracking-tight">
-                  Divyam<span className="text-cyan-600 dark:text-cyan-400">.</span>
+                  Divyam Arora<span className="text-cyan-600 dark:text-cyan-400">.</span>
                 </span>
               </Link>
               <div className="flex items-center gap-6">

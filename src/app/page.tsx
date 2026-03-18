@@ -79,7 +79,7 @@ export default function Home() {
           <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
         </div>
         <div className="pt-6 space-y-4">
-          <p><span className="text-cyan-400">divyam@macbook</span> <span className="text-teal-400">~ %</span> cat skills.json</p>
+          <p><span className="text-cyan-400">divyam@macbook</span> <span className="text-teal-400">~ %</span> python profile.py</p>
           <div className="pl-4 border-l-2 border-slate-700 space-y-2">
             <p><span className="text-blue-300">"gen_ai_and_agents"</span>: ["Agentic AI", "MCP", "LangChain", "LangGraph", "RAG", "LLM Evaluation", "Prompt Engineering", "HuggingFace"],</p>
             <p><span className="text-blue-300">"ml_and_cv"</span>: ["Scikit-learn", "XGBoost", "LightGBM", "OpenCV", "spaCy", "Classification", "Regression", "Clustering"],</p>
