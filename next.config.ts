@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   },
   basePath: '/my-portfolio-blog',
   assetPrefix: '/my-portfolio-blog/',
+  trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
