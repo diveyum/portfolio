@@ -6,17 +6,20 @@
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
+/* Enable dark mode class strategy */
+@custom-variant dark (&:where(.dark, .dark *));
+
 body {
   font-family: var(--font-sans);
 }
 
-/* Base styles for markdown content */
+/* Base styles for markdown content with Dark Mode support */
 .prose {
-  @apply text-slate-800 leading-relaxed;
+  @apply text-slate-800 dark:text-slate-300 leading-relaxed;
 }
 
 .prose h1, .prose h2, .prose h3 {
-  @apply font-bold text-slate-900 mt-8 mb-4;
+  @apply font-bold text-slate-900 dark:text-slate-100 mt-8 mb-4;
 }
 
 .prose p {
@@ -24,9 +27,9 @@ body {
 }
 
 .prose a {
-  @apply text-cyan-600 underline underline-offset-2 decoration-cyan-300 hover:decoration-cyan-600 transition-colors;
+  @apply text-cyan-600 dark:text-cyan-400 underline underline-offset-2 decoration-cyan-300 dark:decoration-cyan-700 hover:decoration-cyan-600 dark:hover:decoration-cyan-400 transition-colors;
 }
 
 .prose code {
-  @apply font-mono text-sm bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200;
+  @apply font-mono text-sm bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700 text-cyan-700 dark:text-cyan-300;
 }

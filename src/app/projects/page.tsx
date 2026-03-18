@@ -34,27 +34,27 @@ export default function Projects() {
   return (
     <div className="space-y-12">
       <header className="space-y-4 max-w-2xl">
-        <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">The Lab</h1>
-        <p className="text-xl text-slate-600 font-light">
+        <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">The Lab</h1>
+        <p className="text-xl text-slate-600 dark:text-slate-400 font-light">
           A collection of machine learning systems, AI agents, and predictive models I've built to solve complex business problems.
         </p>
       </header>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((p, i) => (
-          <div key={i} className="group p-8 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 flex flex-col h-full">
-            <div className="text-xs font-mono font-bold text-orange-500 uppercase tracking-widest mb-3">
+          <div key={i} className="group p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:shadow-xl hover:border-cyan-200 dark:hover:border-cyan-800 transition-all duration-300 flex flex-col h-full">
+            <div className="text-xs font-mono font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest mb-3">
               {p.category}
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-rose-500 transition-colors">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
               {p.title}
             </h3>
-            <p className="text-slate-600 leading-relaxed mb-8 flex-1">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 flex-1">
               {p.description}
             </p>
             <div className="flex flex-wrap gap-2 mt-auto">
               {p.tech.map(t => (
-                <span key={t} className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">
+                <span key={t} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-700">
                   {t}
                 </span>
               ))}
