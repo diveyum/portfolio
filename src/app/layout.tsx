@@ -34,10 +34,18 @@ export default function RootLayout({
                 Divyam<span className="text-rose-500">.</span>
               </span>
             </Link>
-            <nav className="hidden sm:flex gap-8 text-sm font-medium text-slate-600">
+            <nav className="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-600">
               <Link href="/blog" className="hover:text-rose-500 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-rose-500 hover:after:w-full after:transition-all">Writing</Link>
               <Link href="/projects" className="hover:text-rose-500 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-rose-500 hover:after:w-full after:transition-all">Lab</Link>
               <Link href="/resume" className="hover:text-rose-500 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-rose-500 hover:after:w-full after:transition-all">Resume</Link>
+              <div className="flex items-center gap-4 pl-4 border-l border-slate-200">
+                <a href="https://github.com/diveyum" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">
+                  GitHub
+                </a>
+                <a href="https://linkedin.com/in/divyama" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">
+                  LinkedIn
+                </a>
+              </div>
             </nav>
           </div>
         </header>

@@ -10,7 +10,7 @@ export default function Resume() {
         <h1 className="text-4xl font-extrabold text-slate-900 mb-3">Divyam Arora</h1>
         <p className="text-xl text-slate-600 mb-6 font-serif italic">Data Scientist</p>
         <p className="text-sm text-slate-500 mb-6">
-          Gurugram, India • divyamkotaarora2@gmail.com • +91 9582176199
+          Gurugram, India • divyamkotaarora2@gmail.com
         </p>
         <p className="text-slate-700 leading-relaxed mb-6">
           Data Scientist with 2.5+ years experience in shipping GenAI and ML systems across financial services and consulting. Built computer vision systems, document intelligence pipelines, and predictive models from development through deployment.
@@ -33,13 +33,10 @@ export default function Resume() {
             <div>
               <p className="font-semibold text-slate-700 mb-2 italic">Automated Research and Content Generation Pipeline</p>
               <ul className="list-disc list-outside ml-4 text-slate-600 space-y-2 leading-relaxed">
-                <li>Built a automated research and content generation pipeline using LangGraph, Gemini API, and MCP to streamline production of a monthly GenAI risk briefing for leadership, reducing end-to-end production time from 8+ hours of manual research and writing to under 2 hours of guided review and editing.</li>
-                <li>Designed a multi-node LangGraph workflow where the agent performs iterative ReAct-based web research, weighted topic scoring (significance, breadth, relevance, freshness, depth), and structured analysis drafting, with human-in-the-loop review at each decision point.</li>
-                <li>Solved the cold-start research problem by implementing query decomposition across web search, arXiv, and analyst sources (NIST, OWASP, Deloitte, McKinsey), progressively narrowing from broad topic discovery to deep-dive sourcing, and filtering out vendor marketing and low-credibility blogs to prioritize regulatory, academic, and tier-1 analyst content.</li>
-                <li>Built hallucination control through a three-stage verification gate: every factual claim traced back to a specific searched URL, conflicting information across sources flagged for manual review, and all hyperlinks validated before final output.</li>
-                <li>Integrated MCP (Model Context Protocol) to give the agent dynamic access to external tools including web search, URL fetching, and document parsing within a single orchestrated run, eliminating manual copy-paste between research sources and the drafting environment.</li>
-                <li>Automated document rendering using Python and python-docx, programmatically generating branded Word documents with a custom design system including styled headers, accent-bordered cards, inline hyperlinks, and numbered takeaways.</li>
-                <li>Delivered monthly editions covering agentic AI governance, LLM evaluation standards, AI safety benchmarks, and regulatory developments to 30+ cross-functional stakeholders in model risk and data science leadership.</li>
+                <li>Built an automated research and content generation pipeline using LangGraph, Gemini API, and MCP, reducing monthly GenAI risk briefing production time from 8+ hours to under 2 hours.</li>
+                <li>Designed a multi-node workflow for ReAct-based web research, weighted topic scoring, and structured drafting with human-in-the-loop review.</li>
+                <li>Implemented hallucination control via three-stage verification: tracing claims to URLs, flagging conflicts, and validating links before final output.</li>
+                <li>Integrated Model Context Protocol (MCP) for dynamic access to web search and document parsing, alongside automated Python-based document rendering.</li>
               </ul>
             </div>
           </div>
