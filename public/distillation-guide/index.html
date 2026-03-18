@@ -23,33 +23,29 @@
 </head>
 <body>
 
-<!-- Main Site Navigation & Theme Sync -->
+<!-- Theme Sync with Next.js Parent -->
 <script>
-  (function() {
+  function syncTheme() {
     try {
-      var localTheme = localStorage.getItem('theme');
-      var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      var theme = localTheme === 'system' ? systemTheme : (localTheme || 'dark');
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
+      if (window.parent && window.parent.document) {
+        const isDark = window.parent.document.documentElement.classList.contains('dark');
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
       }
     } catch (e) {}
-  })();
+  }
+  syncTheme();
+  
+  try {
+    if (window.parent && window.parent.document) {
+      const observer = new MutationObserver(syncTheme);
+      observer.observe(window.parent.document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    }
+  } catch (e) {}
 </script>
-
-<nav style="position: sticky; top: 0; z-index: 50; width: 100%; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: var(--bg3); opacity: 0.85; border-bottom: 1px solid var(--bdr2);">
-  <div style="max-width: 1024px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-    <a href="/my-portfolio-blog/" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem; color: var(--ink); font-family: var(--ui); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.025em;">
-      <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(to bottom right, #22d3ee, #0891b2); color: white; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 14px; font-weight: bold; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">DA</div>
-      Divyam Arora<span style="color: #0891b2;">.</span>
-    </a>
-    <div style="display: flex; gap: 1.5rem; font-family: var(--ui); font-size: 0.875rem; font-weight: 500;">
-      <a href="/my-portfolio-blog/blog/" style="text-decoration: none; color: var(--ink2); transition: color 0.2s;">Blog</a>
-      <a href="/my-portfolio-blog/projects/" style="text-decoration: none; color: var(--ink2); transition: color 0.2s;">Projects</a>
-      <a href="/my-portfolio-blog/resume/" style="text-decoration: none; color: var(--ink2); transition: color 0.2s;">Resume</a>
-    </div>
-  </div>
-</nav>
 
 <header>
 <div class="c">
