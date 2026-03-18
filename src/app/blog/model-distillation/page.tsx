@@ -9,7 +9,7 @@ export default function ModelDistillationGuide() {
   return (
     <div className="w-full relative flex flex-col -mt-8 sm:-mt-14">
       <IframeWrapper 
-        src="/my-portfolio-blog/distillation-guide/index.html" 
+        src="/portfolio/distillation-guide/index.html" 
         title="An Illustrated Guide to Model Distillation" 
       />
     </div>
