@@ -120,8 +120,12 @@ export default function Resume() {
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Publications</h2>
             <div className="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
               <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 mb-1">Agentic AI Validation Framework</h4>
-              <p className="text-xs text-cyan-600 mb-2">Amex (Internal Whitepaper) 2025</p>
-              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Enterprise standards for autonomous AI agents aligned to SR 11-7 requirements.</p>
+              <p className="text-xs text-cyan-600 mb-3 uppercase tracking-wider font-bold">American Express (Internal Whitepaper) 2025</p>
+              <ul className="list-disc list-outside ml-4 text-xs text-slate-500 dark:text-slate-400 space-y-2 leading-relaxed">
+                <li>Co-authored enterprise whitepaper on model validation standards for autonomous AI agents aligned to SR 11-7 requirements.</li>
+                <li>Designed multi-state agent architecture with guardrail transitions covering memory, planning, execution, and synthesis.</li>
+                <li>Authored scenario-based testing methodology spanning functional, boundary, security, and red teaming categories.</li>
+              </ul>
             </div>
           </section>
 
