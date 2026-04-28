@@ -26,16 +26,22 @@ const TabICLApp = (() => {
 
   // --- Math utilities ---
   const softmax = (logits) => {
-    const m = Math.max(...logits);
+    // Loop over logits to find max, since spreading 1M+ args overflows V8's stack.
+    let m = -Infinity;
+    for (let i = 0; i < logits.length; i++) if (logits[i] > m) m = logits[i];
     const exps = logits.map(v => Math.exp(v - m));
-    const s = exps.reduce((a, b) => a + b, 0);
+    let s = 0;
+    for (let i = 0; i < exps.length; i++) s += exps[i];
     return exps.map(v => v / s);
   };
 
-  // QASSMax-style: scale all logits by log(n), preserving sharpness as n grows.
-  // Real QASSMax adds a learnable per-element gate; we simplify to log(n) for the demo.
+  // QASSMax-style scaling. The real thing learns a per-element MLP plus a
+  // query-dependent gate; we use sqrt(log(n)) here. Why sqrt: pure log(n)
+  // saturates the anchor at 1.0 across the slider's range, so you can't see
+  // anything change. sqrt(log(n)) keeps the contrast with flat softmax visible
+  // at every n the slider hits.
   const softmaxScaled = (logits, n) => {
-    const factor = Math.log(Math.max(n, 2));
+    const factor = Math.sqrt(Math.log(Math.max(n, 2)));
     return softmax(logits.map(v => v * factor));
   };
 
@@ -138,14 +144,16 @@ const TabICLApp = (() => {
     const nReadout = document.getElementById('fade-n-val');
     if (nReadout) nReadout.textContent = n.toLocaleString();
 
-    // Compute the ratio (anchor / noise) — the discriminability metric
-    const flatRatio = flatProbs[0] / Math.max(flatProbs[1], 1e-12);
-    const sharpRatio = sharpProbs[0] / Math.max(sharpProbs[1], 1e-12);
-
-    const flatRatioEl = document.getElementById('fade-ratio-flat');
-    const sharpRatioEl = document.getElementById('fade-ratio-sharp');
-    if (flatRatioEl) flatRatioEl.textContent = flatRatio.toFixed(1) + '×';
-    if (sharpRatioEl) sharpRatioEl.textContent = sharpRatio.toFixed(1) + '×';
+    // The pedagogical metric is the absolute anchor weight. Under flat softmax it
+    // collapses toward zero as n grows. Under QASSMax it stays close to 1.
+    const flatAnchorEl = document.getElementById('fade-ratio-flat');
+    const sharpAnchorEl = document.getElementById('fade-ratio-sharp');
+    const fmtWeight = (w) => {
+      if (w >= 0.01) return w.toFixed(3);
+      return w.toExponential(1).replace('e-', ' × 10⁻');
+    };
+    if (flatAnchorEl) flatAnchorEl.textContent = fmtWeight(flatProbs[0]);
+    if (sharpAnchorEl) sharpAnchorEl.textContent = fmtWeight(sharpProbs[0]);
   };
 
   // --- KaTeX rendering ---
