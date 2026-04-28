@@ -513,7 +513,7 @@ html.dark .g .tt::after { border-top-color: #0f172a; }
   flex-direction: column;
   align-items: center;
   flex: 1;
-  max-width: 80px;
+  max-width: 100px;
 }
 
 .q-bar-val {
