@@ -503,7 +503,7 @@ html.dark .g .tt::after { border-top-color: #0f172a; }
   align-items: flex-end;
   justify-content: center;
   gap: 10px;
-  height: 180px;
+  height: 220px;
   margin: 1rem 0;
   overflow: visible;
 }
@@ -598,7 +598,7 @@ input[type=range]::-moz-range-thumb {
 .fig-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .fig-2col h4 {
