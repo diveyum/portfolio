@@ -17,6 +17,7 @@ export default function BlogIndex() {
     {
       slug: 'tabicl',
       title: 'The Illustrated Tabular Foundation Model',
+      category: "Interactive Guide",
       description: 'A visual deep dive into TabICLv2 — how a single forward pass replaces gradient descent on tabular data.',
       date: '2026-04-28',
       readTime: '18 min',
