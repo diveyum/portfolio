@@ -598,7 +598,7 @@ input[type=range]::-moz-range-thumb {
 .fig-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 .fig-2col h4 {
