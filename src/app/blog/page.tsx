@@ -13,7 +13,7 @@ export default function BlogIndex() {
       category: "Interactive Guide",
       description: "How large neural networks teach smaller ones what they know. A visual walkthrough of theory, temperature scaling, dark knowledge, and interactive math.",
       href: "/model-distillation/",
-    }
+    },
     {
       slug: 'tabicl',
       title: 'The Illustrated Tabular Foundation Model',
