@@ -1,4 +1,4 @@
-import IframeWrapper from '@/components/IframeWrapper';
+import { IframeWrapper } from '@/components/IframeWrapper';
 
 export const metadata = {
   title: 'The Illustrated Tabular Foundation Model | Divyam Arora',
